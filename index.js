@@ -1,3 +1,14 @@
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => res.send('Bot is awake!'));
+
+app.listen(process.env.PORT || 3000, () => {
+    console.log("Keep-alive web server is running!");
+});
+
+// ... your existing discord.js client code continues below ...
+
 const { Client, GatewayIntentBits, PermissionsBitField } = require('discord.js');
 const http = require('http'); // Built-in Node tool
 
